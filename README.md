@@ -1,7 +1,7 @@
 The objective of the PalindromeChecker App is to design and implement a console-based Java application that validates whether a given string is a palindrome under different conditions, while strengthening core programming fundamentals and data structure concepts.
 
-UC1: Application Entry & Welcome Message
--
+#UC1: Application Entry & Welcome Message
+
 
 
 **Goal -** Display a welcome message and app details at startup. The goal is to establish a clear startup workflow
@@ -26,8 +26,10 @@ The PalindromeCheckerApp class represents the entry point of the Palindrome Chec
 5) Console Output – System.out.println() is used to display messages on the console.
 6) Application Flow Control – Defines the startup behavior before palindrome processing begins.
 
-UC2: Print a Hardcoded Palindrome Result
 -
+
+#UC2: Print a Hardcoded Palindrome Result
+
 **Goal:** Display whether a hardcoded string is a palindrome.
 
 **Actor:** User
@@ -52,8 +54,10 @@ UC2: Print a Hardcoded Palindrome Result
 
 **Data Structure:** String
 
-UC3: Palindrome Check Using String Reverse
 -
+
+#UC3: Palindrome Check Using String Reverse
+
 **Goal:** Check whether a string is a palindrome by reversing it.
 
 **Flow:**
@@ -69,8 +73,10 @@ UC3: Palindrome Check Using String Reverse
 
 **Data Structure:** String
 
-UC4: Character Array Based Palindrome Check
 -
+
+#UC4: Character Array Based Palindrome Check
+
 **Goal:** Convert string to character array and compare characters.
 
 **Flow:**
