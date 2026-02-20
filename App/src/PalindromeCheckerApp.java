@@ -4,7 +4,24 @@
 //Usecase-2 : Palindrome Check using Two pointer method
 //UseCase-3 Palindrome check using string reversal method
 import java.lang.String;
+import java.util.Stack;
 public class PalindromeCheckerApp{
+    //USE CASE - 5
+    static void checkpalindromeUsecase5(String org){
+        Stack <Character> stack = new Stack<>();
+        for (char c : org.toCharArray()){
+            stack.push(c);
+        }
+        for (char c : org.toCharArray()){
+            if (!(stack.pop() == c)){
+                System.out.println("is it a palindrome-False");
+                return;
+            }
+        }
+        System.out.println("is it a palindrome-True");
+
+
+    }
     //USE CASE - 4;
     static void checkpalindromeUsecase4(String org){
         int j = org.length()-1;
@@ -71,6 +88,11 @@ public class PalindromeCheckerApp{
         System.out.println("USE CASE - 4");
         System.out.println("Input String-" + orgString_4);
         checkpalindromeUsecase4(orgString_4);
+        //USE CASE - 5
+        String orgString_5 = "noon";
+        System.out.println("USE CASE - 5");
+        System.out.println("INput String-" + orgString_5);
+        checkpalindromeUsecase5(orgString_5);
 
 
     }
