@@ -54,7 +54,7 @@ UC2: Print a Hardcoded Palindrome Result
 
 **Data Structure:** String
 
--
+
 
 UC3: Palindrome Check Using String Reverse
 -
@@ -74,7 +74,7 @@ UC3: Palindrome Check Using String Reverse
 
 **Data Structure:** String
 
--
+
 
 UC4: Character Array Based Palindrome Check
 -
@@ -94,7 +94,7 @@ UC4: Character Array Based Palindrome Check
 
 **Data Structure:** char[]
 
--
+
 
 
 
