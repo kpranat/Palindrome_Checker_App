@@ -5,6 +5,19 @@
 //UseCase-3 Palindrome check using string reversal method
 import java.lang.String;
 public class PalindromeCheckerApp{
+    //USE CASE - 4;
+    static void checkpalindromeUsecase4(String org){
+        int j = org.length()-1;
+        char[] orgArray = org.toCharArray();
+        for (int i =0 ; i<org.length()/2;i++){
+            if (!(orgArray[i] == orgArray[j-i])){
+                System.out.println("Is it a Palindrome-False");
+                return;
+            }
+        }
+        System.out.println("Is it a palindrome-True");
+        return;
+    }
     //USE CASE - 3
     static void checkpalindromeUsecase3(String org){
         int j = org.length();
@@ -53,5 +66,12 @@ public class PalindromeCheckerApp{
         //USE CASE - 3
         System.out.println("USE CASE - 3");
         checkpalindromeUsecase3(org);
+        //USE CASE - 4
+        String orgString_4 = "radar";
+        System.out.println("USE CASE - 4");
+        System.out.println("Input String-" + orgString_4);
+        checkpalindromeUsecase4(orgString_4);
+
+
     }
 }
