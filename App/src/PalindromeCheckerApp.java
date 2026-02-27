@@ -5,7 +5,32 @@
 //UseCase-3 Palindrome check using string reversal method
 import java.lang.String;
 import java.util.Stack;
+import java.util.Queue;
+import java.util.LinkedList;
+
 public class PalindromeCheckerApp{
+    //USE CASE - 6
+    static void checkpalindromeUsecase6(String org){
+
+        Queue<Character> queue = new LinkedList<>();
+        Stack<Character> stack = new Stack<>();
+
+        // Insert characters into both Queue and Stack
+        for (char c : org.toCharArray()){
+            queue.add(c);     // FIFO insertion
+            stack.push(c);    // LIFO insertion
+        }
+
+        // Compare elements
+        while (!queue.isEmpty()){
+            if (queue.remove() != stack.pop()){
+                System.out.println("Is it a Palindrome - False");
+                return;
+            }
+        }
+
+        System.out.println("Is it a Palindrome - True");
+    }
     //USE CASE - 5
     static void checkpalindromeUsecase5(String org){
         Stack <Character> stack = new Stack<>();
@@ -93,6 +118,11 @@ public class PalindromeCheckerApp{
         System.out.println("USE CASE - 5");
         System.out.println("INput String-" + orgString_5);
         checkpalindromeUsecase5(orgString_5);
+        // USE CASE - 6
+        String orgString_6 = "level";
+        System.out.println("\nUSE CASE - 6 (Queue + Stack Method)");
+        System.out.println("Input String - " + orgString_6);
+        checkpalindromeUsecase6(orgString_6);
 
 
     }
