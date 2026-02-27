@@ -174,6 +174,20 @@ UC9: Recursive Palindrome Checker
 
 **Data Structure:** Call Stack
 
+UC10: Case-Insensitive & Space-Ignored Palindrome
+-
+**Goal:** Ignore spaces and case while checking a palindrome.
+
+**Flow:**
+1. Normalize string
+2. Apply previous logic
+
+**Key Concepts used in UC10:**
+1. String preprocessing
+2. Regular expressions
+
+**Data Structure:** String / Array
+
 
 
 

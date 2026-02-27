@@ -9,6 +9,7 @@
 //UseCase-7 : Deque-Based Optimized Palindrome Checker
 //UseCase-8 :Linked List Based Palindrome Checker
 //UseCase-9 :Recursion Based Palindrome Checker
+//Usecase-10 : Case-Insensitive & Space-Ignored Palindrome
 import java.lang.String;
 import java.util.Stack;
 import java.util.Queue;
@@ -18,6 +19,37 @@ import java.util.ArrayDeque;
 import java.util.LinkedList;
 
 public class PalindromeCheckerApp{
+    //USE CASE - 10
+    static void checkpalindormeUsecase10(String org){
+        String orgLowerCase = org.toLowerCase();
+        String[] words= orgLowerCase.trim().split("\\s+");
+        StringBuilder builder = new StringBuilder();
+        for (String words_ : words){
+            builder.append(words_);
+
+        }
+        String normalizedResult = builder.toString();
+        int start = 0; int end = normalizedResult.length()-1;
+        boolean isPalindrome = false;
+        while  (start<=end) {
+            if (normalizedResult.charAt(start) != normalizedResult.charAt(end)) {
+                System.out.println("is it a palindrome = false");
+                isPalindrome = false;
+                return;
+            }
+            start++;
+            end--;
+            isPalindrome = true;
+
+        }
+        if (isPalindrome){
+            System.out.println("is it a palindrome - true");
+            return;
+        }
+
+
+
+    }
     //USE CASE - 9
     static boolean checkpalindromeUsecase9(String org,int start,int last){
         if (start > last){
@@ -219,6 +251,12 @@ public class PalindromeCheckerApp{
         }else{
             System.out.println("is it a palindrome - true");
         }
+        // USE CASE - 10
+        String orgString_10 = "A man a plan a canal Panama";
+        System.out.println("USE CASE - 10");
+        System.out.println("Input String-" + orgString_10);
+        checkpalindormeUsecase10(orgString_10);
+
 
 
     }
