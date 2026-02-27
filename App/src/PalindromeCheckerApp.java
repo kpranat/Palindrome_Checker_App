@@ -1,4 +1,4 @@
-//version 9.0
+//version 11.0
 //author pranat kheria
 //UseCase-1 : Welcome Page
 //Usecase-2 : Palindrome Check using Two pointer method
@@ -10,6 +10,8 @@
 //UseCase-8 :Linked List Based Palindrome Checker
 //UseCase-9 :Recursion Based Palindrome Checker
 //Usecase-10 : Case-Insensitive & Space-Ignored Palindrome
+//UseCase-11 : Object-Oriented Palindrome Service
+
 import java.lang.String;
 import java.util.Stack;
 import java.util.Queue;
@@ -18,6 +20,35 @@ import java.util.Deque;
 import java.util.ArrayDeque;
 import java.util.LinkedList;
 
+//USE CASE - 11;
+class PalindromeCheck{
+    public String orgString;
+    public PalindromeCheck(String a){
+        orgString = a;
+    }
+    public void checkpalindromeUsecase11(){
+        int start = 0;
+        int end = orgString.length()-1;
+        boolean isPalindrome = false;
+        while (start<=end){
+            if (orgString.charAt(start) != orgString.charAt(end)){
+                isPalindrome = false;
+                System.out.println("is it a palindrome - false");
+                return;
+            }
+            start++;
+            end--;
+            isPalindrome = true;
+
+
+        }
+        if (isPalindrome){
+            System.out.println("is a palindrome - true");
+            return;
+        }
+
+    }
+}
 public class PalindromeCheckerApp{
     //USE CASE - 10
     static void checkpalindormeUsecase10(String org){
@@ -256,6 +287,13 @@ public class PalindromeCheckerApp{
         System.out.println("USE CASE - 10");
         System.out.println("Input String-" + orgString_10);
         checkpalindormeUsecase10(orgString_10);
+        //USE CASE - 11
+        String orgString_11 = "racecar";
+        System.out.println("USE CASE - 11");
+        System.out.println("Input String-" + orgString_11);
+        PalindromeCheck checkusecase11 = new PalindromeCheck(orgString_11);
+        checkusecase11.checkpalindromeUsecase11();
+
 
 
 
