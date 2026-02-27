@@ -20,6 +20,81 @@ import java.util.Deque;
 import java.util.ArrayDeque;
 import java.util.LinkedList;
 
+//USE CASE - 12
+interface PalindromeStrategy {
+    boolean isPalindrome(String input);
+}
+class StackStrategy implements PalindromeStrategy {
+
+    @Override
+    public boolean isPalindrome(String input) {
+
+        Stack<Character> stack = new Stack<>();
+
+        // Push all characters into stack
+        for (char c : input.toCharArray()) {
+            stack.push(c);
+        }
+
+        // Compare stack pop with original string
+        for (char c : input.toCharArray()) {
+            if (stack.pop() != c) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+class DequeStrategy implements PalindromeStrategy {
+
+    @Override
+    public boolean isPalindrome(String input) {
+
+        Deque<Character> deque = new ArrayDeque<>();
+
+        // Insert characters into deque
+        for (char c : input.toCharArray()) {
+            deque.add(c);
+        }
+
+        // Compare first and last elements
+        while (deque.size() > 1) {
+            if (deque.pollFirst() != deque.pollLast()) {
+                return false;
+            }
+        }
+
+        return true;
+    }
+}
+class PalindromeContext {
+
+    private PalindromeStrategy strategy;
+
+    // Constructor Injection
+    public PalindromeContext(PalindromeStrategy strategy) {
+        this.strategy = strategy;
+    }
+
+    // Setter Injection (optional - dynamic change)
+    public void setStrategy(PalindromeStrategy strategy) {
+        this.strategy = strategy;
+    }
+
+    // Executes selected strategy
+    public void executeStrategy(String input) {
+        boolean result = strategy.isPalindrome(input);
+
+        if (result) {
+            System.out.println("is it a palindrome - true");
+        } else {
+            System.out.println("is it a palindrome - false");
+        }
+    }
+}
+
+
 //USE CASE - 11;
 class PalindromeCheck{
     public String orgString;
@@ -293,6 +368,24 @@ public class PalindromeCheckerApp{
         System.out.println("Input String-" + orgString_11);
         PalindromeCheck checkusecase11 = new PalindromeCheck(orgString_11);
         checkusecase11.checkpalindromeUsecase11();
+        //USE CASE - 12
+        System.out.println("USE CASE - 12");
+        System.out.println("Strategy Pattern Demonstration");
+
+        String testString = "level";
+        System.out.println("Input String: " + testString);
+
+        // Using Stack Strategy
+        System.out.println("Using Stack Strategy:");
+        PalindromeStrategy stackStrategy = new StackStrategy();
+        PalindromeContext context = new PalindromeContext(stackStrategy);
+        context.executeStrategy(testString);
+
+        //deque strategy
+        System.out.println("Switching to Deque Strategy:");
+        PalindromeStrategy dequeStrategy = new DequeStrategy();
+        context.setStrategy(dequeStrategy);  // Runtime change
+        context.executeStrategy(testString);
 
 
 
