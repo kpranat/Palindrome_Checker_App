@@ -1,4 +1,4 @@
-//version 8.0
+//version 9.0
 //author pranat kheria
 //UseCase-1 : Welcome Page
 //Usecase-2 : Palindrome Check using Two pointer method
@@ -8,6 +8,7 @@
 //UseCase-6 : Queue + Stack Based Palindrome Check
 //UseCase-7 : Deque-Based Optimized Palindrome Checker
 //UseCase-8 :Linked List Based Palindrome Checker
+//UseCase-9 :Recursion Based Palindrome Checker
 import java.lang.String;
 import java.util.Stack;
 import java.util.Queue;
@@ -17,6 +18,19 @@ import java.util.ArrayDeque;
 import java.util.LinkedList;
 
 public class PalindromeCheckerApp{
+    //USE CASE - 9
+    static boolean checkpalindromeUsecase9(String org,int start,int last){
+        if (start > last){
+            return true;
+        }
+        if (org.charAt(start) == org.charAt(last)){
+            return checkpalindromeUsecase9(org,start+1,last-1);
+        }
+        else{
+            return false;
+        }
+
+    }
     //USE CASE - 8
     static void checkpalindromeUsecase8(String org){
         LinkedList <Character> list = new LinkedList<>();
@@ -194,8 +208,17 @@ public class PalindromeCheckerApp{
         System.out.println("USE CASE - 8");
         System.out.println("Input String-" + orgString_8);
         checkpalindromeUsecase8(orgString_8);
-
-
+        // USE CASE - 9
+        String s = "madam";
+        System.out.println("USE CASE - 9");
+        System.out.println("Input String-" + s);
+        int start = 0;
+        int last = s.length()-1;
+        if(!checkpalindromeUsecase9(s,start,last)){
+            System.out.println("is it a palindrome - false");
+        }else{
+            System.out.println("is it a palindrome - true");
+        }
 
 
     }
