@@ -1,4 +1,4 @@
-//version 7.0
+//version 8.0
 //author pranat kheria
 //UseCase-1 : Welcome Page
 //Usecase-2 : Palindrome Check using Two pointer method
@@ -6,15 +6,42 @@
 //UseCase-4 : Character Array Based Palindrome Check
 //UseCase-5 : Stack-Based Palindrome Checker
 //UseCase-6 : Queue + Stack Based Palindrome Check
-//UseCase-7 :
+//UseCase-7 : Deque-Based Optimized Palindrome Checker
+//UseCase-8 :Linked List Based Palindrome Checker
 import java.lang.String;
 import java.util.Stack;
 import java.util.Queue;
 import java.util.LinkedList;
 import java.util.Deque;
 import java.util.ArrayDeque;
+import java.util.LinkedList;
 
 public class PalindromeCheckerApp{
+    //USE CASE - 8
+    static void checkpalindromeUsecase8(String org){
+        LinkedList <Character> list = new LinkedList<>();
+        for (char c : org.toCharArray()){
+                list.addLast(c);
+
+        }
+        boolean isPalindrome = false;
+        while (list.size()>1){
+            if (list.removeFirst() == list.removeLast()){
+                isPalindrome = true;
+            }
+            else {
+                isPalindrome = false;
+            }
+        }
+        if (isPalindrome){
+            System.out.println("is it a palindrome - true");
+
+        }
+        else{
+            System.out.println("is it a palindrome - false");
+        }
+
+    }
     //USE CASE - 7
     static void checlpalindromeUsecase7(String org){
         Deque<Character> deque = new ArrayDeque<>();
@@ -162,6 +189,11 @@ public class PalindromeCheckerApp{
         System.out.println("USE CASE - 7");
         System.out.println("Input String-" + orgString_7);
         checlpalindromeUsecase7(orgString_7);
+        // USE CASE - 8
+        String orgString_8 = "level";
+        System.out.println("USE CASE - 8");
+        System.out.println("Input String-" + orgString_8);
+        checkpalindromeUsecase8(orgString_8);
 
 
 
