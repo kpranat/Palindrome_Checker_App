@@ -1,16 +1,18 @@
-//version 11.0
+//version 13.0
 //author pranat kheria
-//UseCase-1 : Welcome Page
-//Usecase-2 : Palindrome Check using Two pointer method
-//UseCase-3 : Palindrome check using string reversal method
-//UseCase-4 : Character Array Based Palindrome Check
-//UseCase-5 : Stack-Based Palindrome Checker
-//UseCase-6 : Queue + Stack Based Palindrome Check
-//UseCase-7 : Deque-Based Optimized Palindrome Checker
-//UseCase-8 :Linked List Based Palindrome Checker
-//UseCase-9 :Recursion Based Palindrome Checker
+//UseCase-1  : Welcome Page
+//Usecase-2  : Palindrome Check using Two pointer method
+//UseCase-3  : Palindrome check using string reversal method
+//UseCase-4  : Character Array Based Palindrome Check
+//UseCase-5  : Stack-Based Palindrome Checker
+//UseCase-6  : Queue + Stack Based Palindrome Check
+//UseCase-7  : Deque-Based Optimized Palindrome Checker
+//UseCase-8  : Linked List Based Palindrome Checker
+//UseCase-9  : Recursion Based Palindrome Checker
 //Usecase-10 : Case-Insensitive & Space-Ignored Palindrome
 //UseCase-11 : Object-Oriented Palindrome Service
+//UseCase-12 : Strategy Pattern for Palindrome Algorithms (Advanced)
+//UseCase-13 : Performance Comparison
 
 import java.lang.String;
 import java.util.Stack;
@@ -88,8 +90,10 @@ class PalindromeContext {
 
         if (result) {
             System.out.println("is it a palindrome - true");
+            System.out.println("Execution time - " + System.nanoTime());
         } else {
             System.out.println("is it a palindrome - false");
+            System.out.println("Execution time - " + System.nanoTime());
         }
     }
 }
@@ -109,6 +113,7 @@ class PalindromeCheck{
             if (orgString.charAt(start) != orgString.charAt(end)){
                 isPalindrome = false;
                 System.out.println("is it a palindrome - false");
+                System.out.println("Execution time - " + System.nanoTime());
                 return;
             }
             start++;
@@ -119,6 +124,7 @@ class PalindromeCheck{
         }
         if (isPalindrome){
             System.out.println("is a palindrome - true");
+            System.out.println("Execution time - " + System.nanoTime());
             return;
         }
 
@@ -140,6 +146,7 @@ public class PalindromeCheckerApp{
         while  (start<=end) {
             if (normalizedResult.charAt(start) != normalizedResult.charAt(end)) {
                 System.out.println("is it a palindrome = false");
+                System.out.println("Execution time - " + System.nanoTime());
                 isPalindrome = false;
                 return;
             }
@@ -150,6 +157,7 @@ public class PalindromeCheckerApp{
         }
         if (isPalindrome){
             System.out.println("is it a palindrome - true");
+            System.out.println("Execution time - " + System.nanoTime());
             return;
         }
 
@@ -187,10 +195,12 @@ public class PalindromeCheckerApp{
         }
         if (isPalindrome){
             System.out.println("is it a palindrome - true");
+            System.out.println("Execution time - " + System.nanoTime());
 
         }
         else{
             System.out.println("is it a palindrome - false");
+            System.out.println("Execution time - " + System.nanoTime());
         }
 
     }
@@ -214,10 +224,12 @@ public class PalindromeCheckerApp{
         }
         if (isPalindrome){
             System.out.println("is it a palindrome - true");
+            System.out.println("Execution time - " + System.nanoTime());
 
         }
         else{
             System.out.println("is it a palindrome - false");
+            System.out.println("Execution time - " + System.nanoTime());
         }
 
 
@@ -238,11 +250,13 @@ public class PalindromeCheckerApp{
         while (!queue.isEmpty()){
             if (queue.remove() != stack.pop()){
                 System.out.println("Is it a Palindrome - False");
+                System.out.println("Execution time - " + System.nanoTime());
                 return;
             }
         }
 
         System.out.println("Is it a Palindrome - True");
+        System.out.println("Execution time - " + System.nanoTime());
     }
     //USE CASE - 5
     static void checkpalindromeUsecase5(String org){
@@ -253,10 +267,12 @@ public class PalindromeCheckerApp{
         for (char c : org.toCharArray()){
             if (!(stack.pop() == c)){
                 System.out.println("is it a palindrome-False");
+                System.out.println("Execution time - " + System.nanoTime());
                 return;
             }
         }
         System.out.println("is it a palindrome-True");
+        System.out.println("Execution time - " + System.nanoTime());
 
 
     }
@@ -267,10 +283,12 @@ public class PalindromeCheckerApp{
         for (int i =0 ; i<org.length()/2;i++){
             if (!(orgArray[i] == orgArray[j-i])){
                 System.out.println("Is it a Palindrome-False");
+                System.out.println("Execution time - " + System.nanoTime());
                 return;
             }
         }
         System.out.println("Is it a palindrome-True");
+        System.out.println("Execution time - " + System.nanoTime());
         return;
     }
     //USE CASE - 3
@@ -290,10 +308,12 @@ public class PalindromeCheckerApp{
         String reverseString_ = reverseString.toString();
         if (reverseString_.equals(org)){
             System.out.println("is it a palindrome-True");
+            System.out.println("Execution time - " + System.nanoTime());
             return;
         }
         else{
             System.out.println("is it a palindrome-False");
+            System.out.println("Execution time - " + System.nanoTime());
         }
 
     }
@@ -309,6 +329,7 @@ public class PalindromeCheckerApp{
             }
         }
         System.out.println("Is it a palindrome-True");
+        System.out.println("Execution time - " + System.nanoTime());
         return;
     }
     public static void main (String [] args){
@@ -354,8 +375,10 @@ public class PalindromeCheckerApp{
         int last = s.length()-1;
         if(!checkpalindromeUsecase9(s,start,last)){
             System.out.println("is it a palindrome - false");
+            System.out.println("Execution time - " + System.nanoTime());
         }else{
             System.out.println("is it a palindrome - true");
+            System.out.println("Execution time - " + System.nanoTime());
         }
         // USE CASE - 10
         String orgString_10 = "A man a plan a canal Panama";
