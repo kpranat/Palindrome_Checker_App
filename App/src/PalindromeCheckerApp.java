@@ -1,14 +1,48 @@
-//version 3.0
+//version 7.0
 //author pranat kheria
 //UseCase-1 : Welcome Page
 //Usecase-2 : Palindrome Check using Two pointer method
-//UseCase-3 Palindrome check using string reversal method
+//UseCase-3 : Palindrome check using string reversal method
+//UseCase-4 : Character Array Based Palindrome Check
+//UseCase-5 : Stack-Based Palindrome Checker
+//UseCase-6 : Queue + Stack Based Palindrome Check
+//UseCase-7 :
 import java.lang.String;
 import java.util.Stack;
 import java.util.Queue;
 import java.util.LinkedList;
+import java.util.Deque;
+import java.util.ArrayDeque;
 
 public class PalindromeCheckerApp{
+    //USE CASE - 7
+    static void checlpalindromeUsecase7(String org){
+        Deque<Character> deque = new ArrayDeque<>();
+        boolean isPalindrome = false;
+        for (char c : org.toCharArray()){
+            deque.add(c);
+        }
+        while (deque.size() > 1){
+            if (deque.pollFirst() == deque.pollLast()){
+                isPalindrome = true;
+
+            }
+            else{
+                isPalindrome = false;
+                break;
+            }
+
+        }
+        if (isPalindrome){
+            System.out.println("is it a palindrome - true");
+
+        }
+        else{
+            System.out.println("is it a palindrome - false");
+        }
+
+
+    }
     //USE CASE - 6
     static void checkpalindromeUsecase6(String org){
 
@@ -116,13 +150,20 @@ public class PalindromeCheckerApp{
         //USE CASE - 5
         String orgString_5 = "noon";
         System.out.println("USE CASE - 5");
-        System.out.println("INput String-" + orgString_5);
+        System.out.println("Input String-" + orgString_5);
         checkpalindromeUsecase5(orgString_5);
         // USE CASE - 6
         String orgString_6 = "level";
         System.out.println("\nUSE CASE - 6 (Queue + Stack Method)");
         System.out.println("Input String - " + orgString_6);
         checkpalindromeUsecase6(orgString_6);
+        // USE CASE - 7
+        String orgString_7 = "refer";
+        System.out.println("USE CASE - 7");
+        System.out.println("Input String-" + orgString_7);
+        checlpalindromeUsecase7(orgString_7);
+
+
 
 
     }
