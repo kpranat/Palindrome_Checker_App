@@ -159,6 +159,22 @@ UC8: Linked List Based Palindrome Checker
 
 **Data Structure:** Singly Linked List
 
+UC9: Recursive Palindrome Checker
+-
+**Goal:** Check palindrome using recursion.
+
+**Flow:**
+1. Recursive call compares start & end
+2. Base condition exits recursion
+
+**Key Concepts used in UC9:**
+1. Recursion – A technique where a method calls itself to solve smaller subproblems.
+2. Base Condition – Prevents infinite recursion and terminates the recursive calls.
+3. Call Stack – Memory structure used to manage method calls during recursion.
+
+**Data Structure:** Call Stack
+
+
 
 
 
