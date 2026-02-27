@@ -107,7 +107,7 @@ UC5: Stack-Based Palindrome Checker
 3) Pop Operation – Used to remove characters from the stack in reverse order.
 4) Reversal Logic – Stack naturally reverses the order of elements, making it suitable for palindrome validation.
 
-**Data Structure:**Stack
+**Data Structure:** Stack
 
 
 UC6: Queue + Stack Based Palindrome Check
@@ -125,6 +125,23 @@ UC6: Queue + Stack Based Palindrome Check
 4) Logical Comparison – Matching dequeue (queue) output with pop (stack) output to validate palindrome logic.
 
 **Data Structures:** Queue, Stack
+
+UC7: Deque-Based Optimized Palindrome Checker
+-
+**Goal:** Use Deque to compare front and rear elements.
+
+**Flow:**
+1. Insert characters into deque
+2. Remove first & last
+3. Compare until empty
+
+**Key Concepts used in UC7:**
+1. Deque (Double Ended Queue) – A data structure that allows insertion and deletion from both front and rear ends.
+2. Front and Rear Access – Enables direct comparison of first and last characters.
+3. Optimized Data Handling – Eliminates the need for separate reversal data structures.
+
+**Data Structure:** Deque
+
 
 
 
