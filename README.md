@@ -94,6 +94,39 @@ UC4: Character Array Based Palindrome Check
 
 **Data Structure:** char[]
 
+UC5: Stack-Based Palindrome Checker
+-
+**Goal:** Use stack to reverse characters and validate palindrome.
+**Flow:**
+1) Push characters into stack
+2) Pop and compare
+3) Print result
+**Key Concepts used in UC5:**
+1) Stack – A linear data structure that follows the Last In First Out (LIFO) principle.
+2) Push Operation – Used to insert characters into the stack.
+3) Pop Operation – Used to remove characters from the stack in reverse order.
+4) Reversal Logic – Stack naturally reverses the order of elements, making it suitable for palindrome validation.
+
+**Data Structure:**Stack
+
+
+UC6: Queue + Stack Based Palindrome Check
+-
+**Goal:** Demonstrate FIFO vs LIFO using Queue and Stack.
+**Flow:**
+1) Enqueue characters
+2) Push characters to stack
+3) Compare dequeue vs pop
+   
+**Key Concepts used in UC6:**
+1) Queue – A linear data structure that follows the First In First Out (FIFO) principle.
+2) Enqueue & Dequeue Operations – Used to insert and remove elements from the queue.
+3) Stack vs Queue – Demonstrates the behavioral difference between LIFO and FIFO structures.
+4) Logical Comparison – Matching dequeue (queue) output with pop (stack) output to validate palindrome logic.
+
+**Data Structures:** Queue, Stack
+
+
 
 
 
